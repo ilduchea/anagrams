@@ -14,4 +14,8 @@ describe('String#anagrams') do
     expect("ruby".anagrams("test")).to(eq(false))
   end
 
+  it('will be case insensitive') do
+    expect("RuBy".anagrams("bUrY")).to(eq(true))
+  end
+
 end
