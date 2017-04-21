@@ -13,6 +13,7 @@ class String
     end
 
     results_hash.store("anagram", !(booleans_array.include?(false)))
+    results_hash.store("antigram", !(booleans_array.include?(true)))
     results_hash.store("reciever_palindrome", reciever_string.palindromes())
     results_hash.store("argument_palindrome", argument_string.palindromes())
     results_hash.store("reciever_actual_word", reciever_string.actual_word(reciever_string))
