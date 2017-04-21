@@ -1,25 +1,28 @@
-require('palindromes')
-require('actual_word')
+# require('palindromes')
+# require('actual_word')
 
 class String
   define_method(:anagrams) do |string|
-    reciever_string = self.downcase().gsub(/[^0-9A-Za-z]/, '')
-    argument_string = string.downcase().gsub(/[^0-9A-Za-z]/, '')
-    reciever_array = self.downcase().gsub(/[^0-9A-Za-z ]/, '').split(' ')
-    argument_array = string.downcase().gsub(/[^0-9A-Za-z ]/, '').split(' ')
+    reciever_string = self.downcase().gsub(/[^0-9A-Za-z]/, '') #turns input into a string with no spaces or special characters
+    argument_string = string.downcase().gsub(/[^0-9A-Za-z]/, '') #turns input into a string with no spaces or special characters
+    reciever_array = self.downcase().gsub(/[^0-9A-Za-z ]/, '').split(' ') #turns input into an array of words with no special characters
+    argument_array = string.downcase().gsub(/[^0-9A-Za-z ]/, '').split(' ') #turns input into an array of words with no special characters
     results_hash = Hash.new()
     booleans_array = []
     reciever_word_booleans_array = []
     argument_word_booleans_array = []
-puts(reciever_string)
+
+    # checks each character of the reciever against the argument
     reciever_string.each_char do |c|
       booleans_array.push(argument_string.include?(c))
     end
 
+    # checks if each word of the reciever is actually a word. Some propper names are returned as false
     reciever_array.each do |word|
       reciever_word_booleans_array.push(actual_word(word))
     end
 
+    # checks if each word of the argument is actually a word. Some propper names are returned as false
     argument_array.each do |word|
       argument_word_booleans_array.push(actual_word(word))
     end

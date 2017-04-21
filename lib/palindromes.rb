@@ -1,3 +1,5 @@
+
+#Code writen earlier by myself and Sara Schultz
 define_method(:palindromes) do
   string_to_test = self.to_s.downcase().split(" ").join("")
   length = string_to_test.length
