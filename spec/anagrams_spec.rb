@@ -30,4 +30,8 @@ describe('String#anagrams') do
     expect("ruby".anagrams("diamond")).to(eq({"anagram"=>false, "antigram"=>true, "reciever_palindrome"=>false, "argument_palindrome"=>false, "reciever_actual_word"=>true, "argument_actual_word"=>true}))
   end
 
+  it('will work on phrases') do
+    expect("Tom Marvolo Riddle".anagrams("I am Lord Voldemort")).to(eq({"anagram"=>true, "antigram"=>false, "reciever_palindrome"=>false, "argument_palindrome"=>false, "reciever_actual_word"=>false, "argument_actual_word"=>false}))
+  end
+
 end
